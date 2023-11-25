@@ -1,4 +1,3 @@
-// src/components/MedicamentoForm.js
 import React, { useState } from 'react';
 
 const MedicamentoForm = ({ pacientes, onMedicamentoSubmit }) => {
@@ -25,11 +24,11 @@ const MedicamentoForm = ({ pacientes, onMedicamentoSubmit }) => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 to-gray-700 p-8 rounded-md shadow-lg text-white mb-6">
-      <h2 className="text-3xl font-semibold mb-6">Novo Cadastro de Medicamento</h2>
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="pacienteSelecionado" className="block text-sm font-medium text-gray-300">Paciente:</label>
+    <div className="bg-gradient-to-r from-blue-800 to-blue-600 p-8 rounded-md shadow-lg text-white mb-6 float-left w-1/3 h-screen">
+      <h2 className="text-2xl font-bold mb-4">Cadastro de Nova Medicação</h2>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mb-4">
+          <label htmlFor="pacienteSelecionado" className="block text-sm font-medium text-gray-300">Selecione o Paciente:</label>
           <select
             id="pacienteSelecionado"
             value={pacienteSelecionado}
@@ -44,7 +43,7 @@ const MedicamentoForm = ({ pacientes, onMedicamentoSubmit }) => {
           </select>
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="medicamento" className="block text-sm font-medium text-gray-300">Nome do Medicamento:</label>
           <input
             type="text"
@@ -56,7 +55,7 @@ const MedicamentoForm = ({ pacientes, onMedicamentoSubmit }) => {
           />
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="horario" className="block text-sm font-medium text-gray-300">Horário de Administração:</label>
           <input
             type="time"
@@ -68,22 +67,24 @@ const MedicamentoForm = ({ pacientes, onMedicamentoSubmit }) => {
           />
         </div>
 
-        <div>
+        <div className="mb-4">
           <label htmlFor="dosagem" className="block text-sm font-medium text-gray-300">Dosagem:</label>
           <input
             type="text"
             id="dosagem"
             value={dosagem}
             onChange={(e) => setDosagem(e.target.value)}
-            placeholder="Ex: 200ml, 2 comprimidos"
+            
             className="mt-1 p-3 w-full border border-gray-500 rounded text-gray-800 focus:outline-none focus:ring focus:border-blue-500"
             required
           />
         </div>
 
-        <button type="submit" className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-          Cadastrar Medicamento
-        </button>
+        <div className="flex justify-end">
+          <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            Cadastrar Medicação
+          </button>
+        </div>
       </form>
     </div>
   );
